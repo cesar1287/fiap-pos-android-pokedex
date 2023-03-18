@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/FullScreen">
+        android:theme="@style/FullScreen"
+        android:name=".AppApplication">
         <activity android:name="br.com.heiderlopes.pokemonwstemplatev2.presentation.scan.ScanActivity"></activity>
         <activity android:name="br.com.heiderlopes.pokemonwstemplatev2.presentation.pokedex.PokedexActivity" />
         <activity android:name="br.com.heiderlopes.pokemonwstemplatev2.presentation.listpokemons.ListPokemonsActivity" />

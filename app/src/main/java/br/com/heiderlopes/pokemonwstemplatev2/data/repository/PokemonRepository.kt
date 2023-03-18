@@ -3,6 +3,7 @@ package br.com.heiderlopes.pokemonwstemplatev2.data.repository
 import br.com.heiderlopes.pokemonwstemplatev2.data.api.PokemonService
 import br.com.heiderlopes.pokemonwstemplatev2.data.mapper.PokemonResponseListToPokemonListMapper
 import br.com.heiderlopes.pokemonwstemplatev2.model.Pokemon
+import javax.inject.Inject
 
 interface PokemonRepository {
 
@@ -12,7 +13,7 @@ interface PokemonRepository {
     ): Result<List<Pokemon>>
 }
 
-class PokemonRepositoryImpl(
+class PokemonRepositoryImpl @Inject constructor(
     private val pokemonService: PokemonService
 ): PokemonRepository {
 

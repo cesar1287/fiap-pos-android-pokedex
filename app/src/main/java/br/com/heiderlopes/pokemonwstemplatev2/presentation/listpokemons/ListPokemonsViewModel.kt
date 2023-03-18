@@ -7,10 +7,13 @@ import androidx.lifecycle.viewModelScope
 import br.com.heiderlopes.pokemonwstemplatev2.domain.ViewState
 import br.com.heiderlopes.pokemonwstemplatev2.model.Pokemon
 import br.com.heiderlopes.pokemonwstemplatev2.usecase.GetFirstGenerationPokemonsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ListPokemonsViewModel(
+@HiltViewModel
+class ListPokemonsViewModel @Inject constructor(
     val getFirstGenerationPokemonsUseCase: GetFirstGenerationPokemonsUseCase
 ) : ViewModel() {
 
@@ -27,7 +30,6 @@ class ListPokemonsViewModel(
                 getFirstGenerationPokemonsUseCase()
             }.onSuccess {
                 _pokemonResult.postValue(ViewState.Success(it.getOrDefault(listOf())))
-
             }.onFailure {
                 _pokemonResult.postValue(ViewState.Failure(it))
             }

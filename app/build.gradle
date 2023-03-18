@@ -59,6 +59,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
+    implementation "androidx.activity:activity-ktx:1.6.1"
+
     //Biblioteca para adicionar animacoes no projeto
     implementation 'com.airbnb.android:lottie:6.0.0'
 
