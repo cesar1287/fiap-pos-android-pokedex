@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_trainner3"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FormPokemonActivity">
+
+
+        <TextView
+            android:textSize="22sp"
+            android:textColor="#FFEB3B"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/pokemon_solid"
+            android:text="@string/form_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"/>
+        <TextView
+            android:text="@string/label_name"
+            android:textColor="#FFF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/ivPokemonForm"
+            app:layout_constraintEnd_toStartOf="@+id/ivPokemonForm"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:text="Charizard"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:textColor="#FFF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPokemonNameForm"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"/>
+
+        <TextView
+            android:text="@string/label_ps"
+            style="@style/form_label_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPS"
+            app:layout_constraintStart_toEndOf="@+id/ivPS"
+            app:layout_constraintTop_toTopOf="@+id/ivPS"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPS" android:layout_marginStart="4dp"/>
+        <TextView
+            android:text="@string/label_attack"
+            style="@style/form_label_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAttack"
+            app:layout_constraintStart_toEndOf="@+id/imageView8" android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="@+id/imageView8"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"/>
+
+        <TextView
+            android:text="@string/label_defense"
+            style="@style/form_label_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDefense"
+            app:layout_constraintTop_toTopOf="@+id/imageView10"
+            app:layout_constraintStart_toEndOf="@+id/imageView10" android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView10"/>
+        <TextView
+            android:text="@string/label_velocity"
+            style="@style/form_label_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvVelocity"
+            app:layout_constraintStart_toStartOf="@+id/tvDefense"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11" android:layout_marginStart="4dp"/>
+        <View android:layout_width="0dp" android:layout_height="1dp"
+            android:background="#FFEB3B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/view2" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" android:layout_marginTop="12dp"/>
+        <SeekBar
+            style="@style/form_seekbar"
+            android:id="@+id/sbPS"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/tvPS"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tvPSValue"/>
+        <SeekBar
+            style="@style/form_seekbar"
+            android:id="@+id/sbAttack"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tvAttackValue"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttack"/>
+        <SeekBar
+            style="@style/form_seekbar"
+            android:id="@+id/sbDefense"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvDefense" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/tvDefenseValue" android:layout_marginEnd="8dp"/>
+        <SeekBar
+            style="@style/form_seekbar"
+            android:id="@+id/sbVelocity"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvVelocity" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/tvVelocityValue"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:text="2"
+            style="@style/form_label_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAttackValue"
+            app:layout_constraintTop_toTopOf="@+id/sbAttack" app:layout_constraintBottom_toBottomOf="@+id/sbAttack"
+            app:layout_constraintEnd_toEndOf="@+id/tvPSValue"/>
+        <TextView
+            android:text="2"
+            style="@style/form_label_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDefenseValue" app:layout_constraintEnd_toEndOf="@+id/tvAttackValue"
+            app:layout_constraintTop_toTopOf="@+id/sbDefense"
+            app:layout_constraintBottom_toBottomOf="@+id/sbDefense"/>
+        <TextView
+            android:text="2"
+            style="@style/form_label_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvVelocityValue" app:layout_constraintEnd_toEndOf="@+id/tvDefenseValue"
+            app:layout_constraintTop_toTopOf="@+id/sbVelocity"
+            app:layout_constraintBottom_toBottomOf="@+id/sbVelocity"/>
+        <TextView
+            style="@style/form_label_value"
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPSValue"
+            app:layout_constraintTop_toTopOf="@+id/sbPS" app:layout_constraintBottom_toBottomOf="@+id/sbPS"
+            app:layout_constraintEnd_toEndOf="@+id/ivPokemonForm" android:layout_marginEnd="8dp"/>
+        <ImageView
+            style="@style/form_label_icon"
+            app:srcCompat="@drawable/ic_ps"
+            android:id="@+id/ivPS" android:layout_marginTop="64dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPokemonNameForm"
+            app:layout_constraintStart_toStartOf="@+id/tvPokemonNameForm"/>
+        <ImageView
+            style="@style/form_label_icon"
+            app:srcCompat="@drawable/ic_attack"
+            android:id="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/sbPS" android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/ivPS"/>
+        <ImageView
+            style="@style/form_label_icon"
+            app:srcCompat="@drawable/ic_defense"
+            android:id="@+id/imageView10" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/sbAttack"
+            app:layout_constraintStart_toStartOf="@+id/imageView8"
+            />
+        <ImageView
+            style="@style/form_label_icon" app:srcCompat="@drawable/ic_velocity"
+            android:id="@+id/imageView11" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/sbDefense"
+            app:layout_constraintStart_toStartOf="@+id/imageView10"
+            />
+        <ImageView
+            android:padding="8dp"
+            android:background="@drawable/background_pokemon_form"
+            android:layout_width="72dp"
+            android:layout_height="72dp" app:srcCompat="@drawable/charizard"
+            android:id="@+id/ivPokemonForm"
+            app:layout_constraintEnd_toEndOf="@+id/textView5" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/view2" android:layout_marginTop="16dp"/>
+        <Button
+            style="@style/custom_button"
+            android:textColor="#673AB7"
+            android:text="@string/label_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btSaveForm"
+            android:layout_marginTop="64dp"
+            app:layout_constraintTop_toBottomOf="@+id/sbVelocity"
+            app:layout_constraintEnd_toEndOf="@+id/tvVelocityValue" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView11"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

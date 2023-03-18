@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- FullScreen theme. -->
+    <style name="FullScreen" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="custom_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorTextButton</item>
+        <item name="android:background">@drawable/rounded_button</item>
+    </style>
+
+    <style name="form_label_title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="form_label_value">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+    <style name="form_seekbar">
+        <item name="android:max">5</item>
+        <item name="android:progress">2</item>
+        <item name="android:thumbTint">#FF9800</item>
+        <item name="android:progressTint">#FF9800</item>
+        <item name="android:progressBackgroundTint">#FFEB3B</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="form_label_icon">
+        <item name="android:tint">#FFF</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_width">18dp</item>
+    </style>
+
+</resources>

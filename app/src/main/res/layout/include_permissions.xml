@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerPermission"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_charizard"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp">
+
+    <TextView
+        android:id="@+id/tvTitleDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/pokemon_solid"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:text="P e r m i s s ã o\nn e c e s s á r i a" />
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:src="@drawable/pokemon_permission"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvMessageDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:minWidth="820dp"
+        android:padding="8dp"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:text="Precisamos ter acesso a camera do seu device para scannear o QRCode." />
+
+    <Button
+        android:id="@+id/btPermission"
+        style="@style/custom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/include_permission_button"
+        android:textColor="#FF5722" />
+</LinearLayout>

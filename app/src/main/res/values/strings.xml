@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pokermao</string>
+    <string name="include_permission_button">Habilitar permissão</string>
+    <string name="label_save">Salvar</string>
+    <string name="label_velocity">Velocidade</string>
+    <string name="label_defense">Defesa</string>
+    <string name="label_attack">Ataque:</string>
+    <string name="label_ps">PS</string>
+    <string name="label_name">Nome:</string>
+    <string name="form_title">P O K É D A D O S</string>
+</resources>

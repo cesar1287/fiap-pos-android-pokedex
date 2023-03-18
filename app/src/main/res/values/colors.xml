@@ -1,0 +1,12 @@
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#E49C0C</color>
+
+    <color name="colorTextButton">#E49C0C</color>
+    <color name="colorBgButton">#FFF</color>
+    <color name="colorBgButtonPressed">#EEE</color>
+
+    <color name="mainLogoColor">#E49C0C</color>
+    <color name="mainSubTitleColor">#DDD</color>
+</resources>

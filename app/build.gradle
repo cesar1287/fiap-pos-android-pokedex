@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    compileSdkVersion 33
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    defaultConfig {
+        applicationId "br.com.heiderlopes.pokemonwstemplatev2"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    //Biblioteca para adicionar animacoes no projeto
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
+    //Biblioteca para adicionar ler QRCode
+    implementation "me.dm7.barcodescanner:zxing:1.9.13"
+
+    //Biblioteca para adicionar lista performatica ao aplicativo
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+
+    //Biblioteca para adicionar cards ao aplicativo
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Biblioteca para consumir webservice
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //Biblioteca para realizar o parse json para objeto/objeto para json
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.7'
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
+    kapt 'com.github.bumptech.glide:compiler:4.15.0'
+
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
+}
