@@ -23,6 +23,20 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "type"
+
+    productFlavors {
+        dev {
+            dimension "type"
+            buildConfigField 'String', 'BASE_URL', '"https://pokedexdx.herokuapp.com"'
+        }
+
+        prod {
+            dimension "type"
+            buildConfigField 'String', 'BASE_URL', '"url.prod.com"'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -62,7 +76,6 @@ dependencies {
 
     //Biblioteca para realizar o parse json para objeto/objeto para json
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.google.code.gson:gson:2.8.7'
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
@@ -72,6 +85,9 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
