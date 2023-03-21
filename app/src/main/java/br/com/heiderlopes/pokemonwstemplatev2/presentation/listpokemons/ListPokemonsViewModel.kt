@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.heiderlopes.pokemonwstemplatev2.domain.ViewState
 import br.com.heiderlopes.pokemonwstemplatev2.model.Pokemon
-import br.com.heiderlopes.pokemonwstemplatev2.usecase.GetFirstGenerationPokemonsUseCase
+import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.GetFirstGenerationPokemonsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

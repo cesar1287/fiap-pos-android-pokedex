@@ -1,4 +1,4 @@
-package br.com.heiderlopes.pokemonwstemplatev2.usecase
+package br.com.heiderlopes.pokemonwstemplatev2.domain.usecase
 
 import br.com.heiderlopes.pokemonwstemplatev2.model.Pokemon
 import br.com.heiderlopes.pokemonwstemplatev2.data.repository.PokemonRepository

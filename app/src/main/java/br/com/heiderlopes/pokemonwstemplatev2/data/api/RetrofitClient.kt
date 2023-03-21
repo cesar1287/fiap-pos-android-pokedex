@@ -1,6 +1,7 @@
 package br.com.heiderlopes.pokemonwstemplatev2.data.api
 
 import android.content.Context
+import br.com.heiderlopes.pokemonwstemplatev2.BuildConfig
 import br.com.heiderlopes.pokemonwstemplatev2.BuildConfig.BASE_URL
 import br.com.heiderlopes.pokemonwstemplatev2.data.interceptor.AuthInterceptor
 import br.com.heiderlopes.pokemonwstemplatev2.data.interceptor.CacheInterceptor
@@ -8,6 +9,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,10 +21,16 @@ class RetrofitClient(
     private val gson: Gson by lazy { GsonBuilder().create() }
 
     private val okHttp: OkHttpClient by lazy {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        if (BuildConfig.DEBUG) {
+            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        }
+
         OkHttpClient.Builder()
             .cache(cacheSize())
             .addNetworkInterceptor(CacheInterceptor)
             .addInterceptor(AuthInterceptor())
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 
