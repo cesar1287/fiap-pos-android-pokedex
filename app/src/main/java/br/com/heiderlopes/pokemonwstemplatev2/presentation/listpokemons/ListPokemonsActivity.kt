@@ -20,7 +20,7 @@ class ListPokemonsActivity : AppCompatActivity() {
     private val listPokemonsAdapter: ListPokemonsAdapter by lazy {
         ListPokemonsAdapter {
             val intent = Intent(this, FormPokemonActivity::class.java)
-            intent.putExtra("POKEMON", it.number)
+            intent.putExtra(KEY_INTENT_POKEMON_NUMBER, it.number)
             startActivity(intent)
         }
     }
@@ -70,5 +70,9 @@ class ListPokemonsActivity : AppCompatActivity() {
                 layoutManager = GridLayoutManager(this@ListPokemonsActivity, 3)
             }
         }
+    }
+
+    companion object {
+        const val KEY_INTENT_POKEMON_NUMBER = "pokemonNumber"
     }
 }
