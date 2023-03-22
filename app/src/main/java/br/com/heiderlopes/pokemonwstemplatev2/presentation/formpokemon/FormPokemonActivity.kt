@@ -48,6 +48,32 @@ class FormPokemonActivity : AppCompatActivity() {
                 }
             }
         }
+
+        viewModel.pokemonUpdateResult.observe(this) {
+            when (it) {
+                is ViewState.Success -> {
+                    Toast.makeText(this, "Pokémon atualizado com sucesso", Toast.LENGTH_LONG).show()
+                }
+                is ViewState.Loading -> {
+                }
+                is ViewState.Failure -> {
+                    Toast.makeText(this, it.throwable.message, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+        binding.btSaveForm.setOnClickListener {
+            with(binding) {
+                pokemon.attack = sbAttack.progress
+                pokemon.defense = sbDefense.progress
+                pokemon.velocity = sbVelocity.progress
+                pokemon.ps = sbPS.progress
+                viewModel.update(
+                    pokemon
+                )
+            }
+        }
+
     }
 
     private fun setValues(pokemon: Pokemon) {

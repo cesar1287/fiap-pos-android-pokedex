@@ -1,10 +1,7 @@
 package br.com.heiderlopes.pokemonwstemplatev2.di
 
 import br.com.heiderlopes.pokemonwstemplatev2.data.repository.PokemonRepository
-import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.GetFirstGenerationPokemonsUseCase
-import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.GetFirstGenerationPokemonsUseCaseImpl
-import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.GetPokemonUseCase
-import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.GetPokemonUseCaseImpl
+import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,6 +25,15 @@ class UseCaseModule {
         pokemonRepository: PokemonRepository
     ): GetPokemonUseCase {
         return GetPokemonUseCaseImpl(
+            pokemonRepository
+        )
+    }
+
+    @Provides
+    fun provideUpdatePokemonUseCase(
+        pokemonRepository: PokemonRepository
+    ): UpdatePokemonUseCase {
+        return UpdatePokemonUseCaseImpl(
             pokemonRepository
         )
     }
