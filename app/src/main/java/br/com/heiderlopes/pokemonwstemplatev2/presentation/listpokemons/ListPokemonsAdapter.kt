@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import br.com.heiderlopes.pokemonwstemplatev2.data.interceptor.GlideAuthenticator
 import br.com.heiderlopes.pokemonwstemplatev2.databinding.PokemonListItemBinding
 import br.com.heiderlopes.pokemonwstemplatev2.model.Pokemon
 import br.com.heiderlopes.pokemonwstemplatev2.utils.GlideApp
@@ -30,9 +31,10 @@ class ListPokemonsAdapter(
         holder.binding.tvPokemonName.text = pokemon.name
         holder.binding.tvPokemonNumber.text = pokemon.number
 
+        val imageUrl = "https://pokedexdx.herokuapp.com${pokemon.imageURL}"
 
         GlideApp.with(holder.itemView.context)
-            .load("https://pokedexdx.herokuapp.com${pokemon.imageURL}")
+            .load(GlideAuthenticator.getUrlWithAuthenticator(imageUrl))
             .into(holder.binding.ivPokemon)
 
         holder.binding.root.setOnClickListener {
